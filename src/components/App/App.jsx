@@ -5,12 +5,14 @@ import { UserList } from "../UserList";
 import { TodoList } from "../TodoList";
 import "./App.css";
 import { loadUser } from "../../store/users/userActions";
+import { loadTodo } from "../../store/todos/todoAcrions";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(loadUser());
+    dispatch(loadTodo());
   }, [dispatch]);
 
   return (
